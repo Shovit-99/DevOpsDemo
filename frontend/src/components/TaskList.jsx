@@ -9,12 +9,24 @@ export default function TaskList({ tasks, onToggleStatus, onDeleteTask }) {
   }
 
   // --- MERGE CONFLICT ZONE (Scenario 2) ---
-  // Base implementation renders tasks directly without search or sorting controls
-  const displayedTasks = tasks;
+  const [searchQuery, setSearchQuery] = React.useState('');
+  const displayedTasks = tasks.filter(t => 
+    t.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    t.description.toLowerCase().includes(searchQuery.toLowerCase())
+  );
   // --- END ZONE ---
 
   return (
     <div className="task-list-container">
+      <div className="search-bar" style={{ marginBottom: '15px' }}>
+        <input 
+          type="text" 
+          placeholder="Search active tasks..." 
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          style={{ width: '100%', padding: '8px', borderRadius: '4px', border: '1px solid #ccc' }}
+        />
+      </div>
       <h3>Active Tasks ({displayedTasks.length})</h3>
       <div className="task-grid">
         {displayedTasks.map(task => (
