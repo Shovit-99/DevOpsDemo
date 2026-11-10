@@ -4,3 +4,4 @@ COPY package.json ./
 COPY src/ ./src/
 EXPOSE 5000
 CMD ["node", "src/server.js"]
+

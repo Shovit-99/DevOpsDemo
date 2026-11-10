@@ -75,3 +75,4 @@ const displayedTasks = [...tasks]
   ```
 - Simulate Deployment Failure:
   Introduce an unhandled exception or change port in backend to 9999, run `docker compose up -d`, observe health check failure.
+

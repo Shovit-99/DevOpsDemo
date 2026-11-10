@@ -940,3 +940,4 @@ git-workflow-lab/
 const docPath = path.join(__dirname, 'Project_Report_Git_Workflow_Optimization.doc');
 fs.writeFileSync(docPath, reportHtml, 'utf8');
 console.log('Successfully generated Word-compatible report at:', docPath);
+

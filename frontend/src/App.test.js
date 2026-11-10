@@ -23,3 +23,4 @@ test('Frontend App component file exists and routes API health', () => {
   const content = fs.readFileSync(appPath, 'utf8');
   assert.ok(content.includes('/api/health'), 'App must check API health');
 });
+

@@ -28,3 +28,4 @@ jobs:
 
       - name: Build Full-Stack Application
         run: npm run build
+
